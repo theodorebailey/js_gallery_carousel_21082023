@@ -9,6 +9,140 @@
 </head>
 <body>
 
+    <!-- create our image carousel container -->
+    <div class="gallery-wrap">
+        <!--  we have our back button image with id to target in JS -->
+        <img src="images/back.png" alt="" id="backBtn">
+
+        <!-- we have our carousel of images -->
+        <div class="gallery">
+            <!--  we have our 3 section containers -->
+            <div>
+                <!-- each housing a span tag with a nested img element with src location -->
+                <!-- this leaves sections of 3 images with a carousel affect -->
+                <span><img src="images/image-1.png" alt=""></span>
+                <span><img src="images/image-2.png" alt=""></span>
+                <span><img src="images/image-3.png" alt=""></span>
+                <!--  making a row of 6 fills the page with 6 images -->
+                <span><img src="images/image-4.png" alt=""></span>
+                <span><img src="images/image-5.png" alt=""></span>
+                <span><img src="images/image-6.png" alt=""></span>
+            </div>
+            <div>
+                <!-- each housing a span tag with a nested img element with src location -->
+                <!-- this leaves sections of 3 images with a carousel affect -->
+                <span><img src="images/image-1.png" alt=""></span>
+                <span><img src="images/image-2.png" alt=""></span>
+                <span><img src="images/image-3.png" alt=""></span>
+                <!--  making a row of 6 fills the page with 6 images -->
+                <span><img src="images/image-4.png" alt=""></span>
+                <span><img src="images/image-5.png" alt=""></span>
+                <span><img src="images/image-6.png" alt=""></span>
+            </div>
+            <div>
+                <!-- each housing a span tag with a nested img element with src location -->
+                <!-- this leaves sections of 3 images with a carousel affect -->
+                <span><img src="images/image-1.png" alt=""></span>
+                <span><img src="images/image-2.png" alt=""></span>
+                <span><img src="images/image-3.png" alt=""></span>
+                <!--  making a row of 6 fills the page with 6 images -->
+                <span><img src="images/image-4.png" alt=""></span>
+                <span><img src="images/image-5.png" alt=""></span>
+                <span><img src="images/image-6.png" alt=""></span>
+            </div>
+            <div>
+                <!-- each housing a span tag with a nested img element with src location -->
+                <!-- this leaves sections of 3 images with a carousel affect -->
+                <span><img src="images/image-1.png" alt=""></span>
+                <span><img src="images/image-2.png" alt=""></span>
+                <span><img src="images/image-3.png" alt=""></span>
+                <!--  making a row of 6 fills the page with 6 images -->
+                <span><img src="images/image-4.png" alt=""></span>
+                <span><img src="images/image-5.png" alt=""></span>
+                <span><img src="images/image-6.png" alt=""></span>
+            </div>
+            <div>
+                <!-- each housing a span tag with a nested img element with src location -->
+                <!-- this leaves sections of 3 images with a carousel affect -->
+                <span><img src="images/image-1.png" alt=""></span>
+                <span><img src="images/image-2.png" alt=""></span>
+                <span><img src="images/image-3.png" alt=""></span>
+                <!--  making a row of 6 fills the page with 6 images -->
+                <span><img src="images/image-4.png" alt=""></span>
+                <span><img src="images/image-5.png" alt=""></span>
+                <span><img src="images/image-6.png" alt=""></span>
+            </div>
+            <div>
+                <!-- each housing a span tag with a nested img element with src location -->
+                <!-- this leaves sections of 3 images with a carousel affect -->
+                <span><img src="images/image-1.png" alt=""></span>
+                <span><img src="images/image-2.png" alt=""></span>
+                <span><img src="images/image-3.png" alt=""></span>
+                <!--  making a row of 6 fills the page with 6 images -->
+                <span><img src="images/image-4.png" alt=""></span>
+                <span><img src="images/image-5.png" alt=""></span>
+                <span><img src="images/image-6.png" alt=""></span>
+            </div>
+            <div>
+                <!-- each housing a span tag with a nested img element with src location -->
+                <!-- this leaves sections of 3 images with a carousel affect -->
+                <span><img src="images/image-1.png" alt=""></span>
+                <span><img src="images/image-2.png" alt=""></span>
+                <span><img src="images/image-3.png" alt=""></span>
+                <!--  making a row of 6 fills the page with 6 images -->
+                <span><img src="images/image-4.png" alt=""></span>
+                <span><img src="images/image-5.png" alt=""></span>
+                <span><img src="images/image-6.png" alt=""></span>
+            </div>
+        </div>
+
+        <!--  we have our next button with id to target in JS -->
+        <img src="images/next.png" alt="" id="nextBtn">
+    </div>
+
+    <script>
+
+        //  we need to target the scroll container gallery
+        let scrollContainer = document.querySelector(".gallery");
+        // our back button
+        let backBtn = document.getElementById("backBtn");
+        // our forwards button
+        let nextBtn = document.getElementById("nextBtn");
+
+        // add event listener for mouse wheel
+        //  notice how we add an event listener wheel
+        // we use the wheel to add an event identifier
+        // evt represents the event object, in this case "wheel", which we can use to manipulate its behaviour
+        scrollContainer.addEventListener("wheel", (evt) => {
+            // prevent default scroll page up and down
+            evt.preventDefault();
+            // add left and right scrolling for laptop
+            scrollContainer.scrollLeft += evt.deltaX;
+            // Y is up and down two fingers
+            scrollContainer.scrollLeft += evt.deltaY;
+            scrollContainer.style.scrollBehaviour = "auto";
+        });
+
+        // target next button, add an event listener and use this click event to add behaviour to it
+        nextBtn.addEventListener("click", () => {
+            scrollContainer.style.scrollBehavior = "smooth";
+            // 900 width for gallery
+            // add scroll functionality + 900 to scroll left +
+            scrollContainer.scrollLeft += 900;
+        });
+
+        // our back button add event listener click and add behaviour
+        backBtn.addEventListener("click", () => {
+            // target id scrollContainer.style.scrollBehavior to smooth
+            scrollContainer.style.scrollBehavior = "smooth";
+            // 900 width for gallery
+            // add scroll left - functionality - 900 which is the 3 image size
+            scrollContainer.scrollLeft -= 900;
+        })
+
+
+    </script>
+
     
 </body>
 </html>

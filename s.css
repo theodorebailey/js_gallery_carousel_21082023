@@ -1,3 +1,7 @@
+/* we are styling for a full page carousel */
+
+/*  */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,17 +9,66 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+/* set background colour of whole page */
 body{
     background: black;
 }
 
+/* set gallery width, provide flex box for our gallery and set overflow to scroll functionality */
 .gallery{
     width: 900px;
     display: flex;
+    /* this makes only the gallery scroll */
+    overflow-x: scroll;
 }
 
+
+/* set width to 100% of gallery, display items in a grid with auto column sizing, add gaps in grid and padding betweeen items and remove flex functionality */
 .gallery div{
     width: 100%;
     display: grid;
     grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    padding: 10px;
+    flex: none;
+}
+
+/* REMEMBER THIS */
+/* YOU CAN SET IT TO BLACK AND WHITE AND COLOUR ON HOVER */
+.gallery div img{
+    width: 100%;
+    filter: grayscale(100%);
+    transition: transform 0.5s;
+}
+
+/*  */
+.gallery::-webkit-scrollbar{
+    /* removes the visible scroll bar */
+    /* we can't scroll now */
+    display: none;
+}
+
+/* set gallery wrap to display flex and align items center and justify content center with a margin between */
+.gallery-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10% auto;
+}
+
+/* for icons to scroll */
+/* set width to id element buttons and create a margin */
+#backBtn, #nextBtn{
+    width: 50px;
+    cursor: pointer;
+    margin: 40px;
+}
+
+/* REMOVE GRAYSCALE ON HOVER
+INCREASE SIZE */
+/* set greyscale effect back to 0 from 100% on hover, and enlarge the image by 10% */
+.gallery div img:hover{
+    filter: grayscale(0);
+    cursor: pointer;
+    transform: scale(1.1);
 }
